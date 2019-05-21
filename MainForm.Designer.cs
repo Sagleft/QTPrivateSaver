@@ -40,21 +40,25 @@ namespace QTPrivateSaver
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btn_tryCopy_conf = new System.Windows.Forms.Button();
+			this.btn_help_bdata = new System.Windows.Forms.Button();
 			this.btn_find_bdir = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.linkLabel_confDir = new System.Windows.Forms.LinkLabel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btn_goto_github = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btn_test_connection = new System.Windows.Forms.Button();
 			this.label7 = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.textBox_password = new System.Windows.Forms.TextBox();
+			this.checkBox_locked = new System.Windows.Forms.CheckBox();
 			this.btn_help_export = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.btn_export_keys = new System.Windows.Forms.Button();
+			this.saveKeysDialog = new System.Windows.Forms.SaveFileDialog();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -65,14 +69,14 @@ namespace QTPrivateSaver
 			this.groupBox1.BackColor = System.Drawing.Color.White;
 			this.groupBox1.Controls.Add(this.comboBox1);
 			this.groupBox1.Controls.Add(this.label6);
-			this.groupBox1.Controls.Add(this.button2);
-			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Controls.Add(this.btn_tryCopy_conf);
+			this.groupBox1.Controls.Add(this.btn_help_bdata);
 			this.groupBox1.Controls.Add(this.btn_find_bdir);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.linkLabel1);
+			this.groupBox1.Controls.Add(this.linkLabel_confDir);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(760, 174);
@@ -97,38 +101,40 @@ namespace QTPrivateSaver
 			// 
 			// label6
 			// 
-			this.label6.Location = new System.Drawing.Point(147, 132);
+			this.label6.Location = new System.Drawing.Point(15, 132);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(100, 23);
+			this.label6.Size = new System.Drawing.Size(232, 23);
 			this.label6.TabIndex = 6;
-			this.label6.Text = "Помощь:";
+			this.label6.Text = "Или воспользуйтесь:";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// button2
+			// btn_tryCopy_conf
 			// 
-			this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button2.Location = new System.Drawing.Point(552, 128);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(193, 32);
-			this.button2.TabIndex = 5;
-			this.button2.Text = "Перенести автоматически";
-			this.button2.UseVisualStyleBackColor = false;
+			this.btn_tryCopy_conf.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.btn_tryCopy_conf.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.btn_tryCopy_conf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_tryCopy_conf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.btn_tryCopy_conf.Location = new System.Drawing.Point(552, 128);
+			this.btn_tryCopy_conf.Name = "btn_tryCopy_conf";
+			this.btn_tryCopy_conf.Size = new System.Drawing.Size(193, 32);
+			this.btn_tryCopy_conf.TabIndex = 5;
+			this.btn_tryCopy_conf.Text = "Перенести автоматически";
+			this.btn_tryCopy_conf.UseVisualStyleBackColor = false;
+			this.btn_tryCopy_conf.Click += new System.EventHandler(this.Btn_tryCopy_confClick);
 			// 
-			// button1
+			// btn_help_bdata
 			// 
-			this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(353, 128);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(193, 32);
-			this.button1.TabIndex = 5;
-			this.button1.Text = "Где папка бывает обычно?";
-			this.button1.UseVisualStyleBackColor = false;
+			this.btn_help_bdata.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.btn_help_bdata.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.btn_help_bdata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_help_bdata.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.btn_help_bdata.Location = new System.Drawing.Point(353, 128);
+			this.btn_help_bdata.Name = "btn_help_bdata";
+			this.btn_help_bdata.Size = new System.Drawing.Size(193, 32);
+			this.btn_help_bdata.TabIndex = 5;
+			this.btn_help_bdata.Text = "Где папка бывает обычно?";
+			this.btn_help_bdata.UseVisualStyleBackColor = false;
+			this.btn_help_bdata.Click += new System.EventHandler(this.Btn_help_bdataClick);
 			// 
 			// btn_find_bdir
 			// 
@@ -142,6 +148,7 @@ namespace QTPrivateSaver
 			this.btn_find_bdir.TabIndex = 5;
 			this.btn_find_bdir.Text = "Найти папку";
 			this.btn_find_bdir.UseVisualStyleBackColor = false;
+			this.btn_find_bdir.Click += new System.EventHandler(this.Btn_find_bdirClick);
 			// 
 			// label5
 			// 
@@ -149,7 +156,8 @@ namespace QTPrivateSaver
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(730, 30);
 			this.label5.TabIndex = 4;
-			this.label5.Text = "3. Скопируйте .conf файл для необходимой монеты по пути расположения blokchain.";
+			this.label5.Text = "3. Скопируйте .conf файл для необходимой монеты в папку с файлом кошелька (wallet" +
+			".dat)";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label3
@@ -179,20 +187,21 @@ namespace QTPrivateSaver
 			this.label2.Text = "1. Закройте кошелек и убедитесь, что процесс не остался активным.";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// linkLabel1
+			// linkLabel_confDir
 			// 
-			this.linkLabel1.ActiveLinkColor = System.Drawing.Color.CornflowerBlue;
-			this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.linkLabel1.LinkColor = System.Drawing.Color.DodgerBlue;
-			this.linkLabel1.Location = new System.Drawing.Point(84, 65);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(131, 30);
-			this.linkLabel1.TabIndex = 1;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "кликните здесь,";
-			this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.linkLabel1.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
+			this.linkLabel_confDir.ActiveLinkColor = System.Drawing.Color.CornflowerBlue;
+			this.linkLabel_confDir.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.linkLabel_confDir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.linkLabel_confDir.LinkColor = System.Drawing.Color.DodgerBlue;
+			this.linkLabel_confDir.Location = new System.Drawing.Point(84, 65);
+			this.linkLabel_confDir.Name = "linkLabel_confDir";
+			this.linkLabel_confDir.Size = new System.Drawing.Size(131, 30);
+			this.linkLabel_confDir.TabIndex = 1;
+			this.linkLabel_confDir.TabStop = true;
+			this.linkLabel_confDir.Text = "кликните здесь,";
+			this.linkLabel_confDir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.linkLabel_confDir.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
+			this.linkLabel_confDir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_confDirLinkClicked);
 			// 
 			// label1
 			// 
@@ -217,6 +226,7 @@ namespace QTPrivateSaver
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.btn_test_connection);
 			this.groupBox2.Controls.Add(this.label7);
 			this.groupBox2.Location = new System.Drawing.Point(12, 192);
 			this.groupBox2.Name = "groupBox2";
@@ -225,18 +235,34 @@ namespace QTPrivateSaver
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Шаг 2";
 			// 
+			// btn_test_connection
+			// 
+			this.btn_test_connection.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.btn_test_connection.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.btn_test_connection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_test_connection.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.btn_test_connection.Location = new System.Drawing.Point(15, 104);
+			this.btn_test_connection.Name = "btn_test_connection";
+			this.btn_test_connection.Size = new System.Drawing.Size(244, 32);
+			this.btn_test_connection.TabIndex = 6;
+			this.btn_test_connection.Text = "Проверить подключение к кошельку";
+			this.btn_test_connection.UseVisualStyleBackColor = false;
+			this.btn_test_connection.Click += new System.EventHandler(this.Btn_test_connectionClick);
+			// 
 			// label7
 			// 
 			this.label7.Location = new System.Drawing.Point(15, 39);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(244, 23);
 			this.label7.TabIndex = 0;
-			this.label7.Text = "- Запустите кошелек";
+			this.label7.Text = "Запустите кошелек";
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.textBox_password);
+			this.groupBox3.Controls.Add(this.checkBox_locked);
 			this.groupBox3.Controls.Add(this.btn_help_export);
-			this.groupBox3.Controls.Add(this.button3);
+			this.groupBox3.Controls.Add(this.btn_export_keys);
 			this.groupBox3.Location = new System.Drawing.Point(296, 192);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(476, 155);
@@ -244,9 +270,27 @@ namespace QTPrivateSaver
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Шаг 3. Управление ключами";
 			// 
+			// textBox_password
+			// 
+			this.textBox_password.AllowDrop = true;
+			this.textBox_password.Location = new System.Drawing.Point(279, 39);
+			this.textBox_password.Name = "textBox_password";
+			this.textBox_password.Size = new System.Drawing.Size(182, 29);
+			this.textBox_password.TabIndex = 3;
+			this.textBox_password.UseSystemPasswordChar = true;
+			// 
+			// checkBox_locked
+			// 
+			this.checkBox_locked.Location = new System.Drawing.Point(17, 41);
+			this.checkBox_locked.Name = "checkBox_locked";
+			this.checkBox_locked.Size = new System.Drawing.Size(257, 24);
+			this.checkBox_locked.TabIndex = 2;
+			this.checkBox_locked.Text = "кошелек зашифрован, пароль:";
+			this.checkBox_locked.UseVisualStyleBackColor = true;
+			// 
 			// btn_help_export
 			// 
-			this.btn_help_export.Location = new System.Drawing.Point(345, 65);
+			this.btn_help_export.Location = new System.Drawing.Point(344, 87);
 			this.btn_help_export.Name = "btn_help_export";
 			this.btn_help_export.Size = new System.Drawing.Size(34, 33);
 			this.btn_help_export.TabIndex = 1;
@@ -254,14 +298,20 @@ namespace QTPrivateSaver
 			this.btn_help_export.UseVisualStyleBackColor = true;
 			this.btn_help_export.Click += new System.EventHandler(this.Btn_help_exportClick);
 			// 
-			// button3
+			// btn_export_keys
 			// 
-			this.button3.Location = new System.Drawing.Point(100, 65);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(239, 33);
-			this.button3.TabIndex = 0;
-			this.button3.Text = "Экспорт приватных ключей";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btn_export_keys.Location = new System.Drawing.Point(99, 87);
+			this.btn_export_keys.Name = "btn_export_keys";
+			this.btn_export_keys.Size = new System.Drawing.Size(239, 33);
+			this.btn_export_keys.TabIndex = 0;
+			this.btn_export_keys.Text = "Экспорт приватных ключей";
+			this.btn_export_keys.UseVisualStyleBackColor = true;
+			this.btn_export_keys.Click += new System.EventHandler(this.Btn_export_keysClick);
+			// 
+			// saveKeysDialog
+			// 
+			this.saveKeysDialog.DefaultExt = "txt";
+			this.saveKeysDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
 			// 
 			// MainForm
 			// 
@@ -281,22 +331,27 @@ namespace QTPrivateSaver
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.SaveFileDialog saveKeysDialog;
+		private System.Windows.Forms.CheckBox checkBox_locked;
+		private System.Windows.Forms.TextBox textBox_password;
+		private System.Windows.Forms.Button btn_test_connection;
+		private System.Windows.Forms.Button btn_export_keys;
 		private System.Windows.Forms.Button btn_help_export;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btn_tryCopy_conf;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button btn_find_bdir;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btn_help_bdata;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.LinkLabel linkLabel_confDir;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btn_goto_github;
 		private System.Windows.Forms.Label label1;
