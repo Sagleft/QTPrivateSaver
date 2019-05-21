@@ -13,6 +13,7 @@
 ### Разработчику на бутерброды:
 
 ![enter image description here](http://sagleft.ru/donate_mfc.gif)
+
 Mv7vb6eWskJd2xtfB1U97CfKEZxML65Me4
 
 (MFCoin)
