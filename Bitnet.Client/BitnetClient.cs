@@ -222,7 +222,7 @@ namespace Bitnet.Client
 		    	IEnumerable<string> res_string = GetAddressesByAccount(account_name);
 		    	string[] accounts_arr = PerformQuery(res_string);
 		    	for(int i=0; i < accounts_arr.Length; i++) {
-		    		account_key = accounts_arr[i];
+		    		account_key = DumpPrivKey(accounts_arr[i]);
 		    		int account_number = i+1;
 		    		if(accounts_arr.Length == 1) {
 		    			write_name = account_name;
