@@ -198,12 +198,19 @@ namespace Bitnet.Client
 		return count;
     }
     
+    public static T[] PerformQuery<T>(IEnumerable<T> query)
+	{
+	    T[] array = query.Cast<T>().ToArray();
+	    return array;
+	}
+    
     //в формате <имя аккаунта, приватный ключ>
     public Dictionary<string, string> GetAccountsKeys() {
     	Dictionary<string, string> dict = new Dictionary<string, string>();
     	string account_name = "";
     	string account_key  = "";
     	JObject accounts_obj = ListAccounts();
+    	string write_name = "";
     	
     	foreach (var account in accounts_obj)
 		{
@@ -211,8 +218,21 @@ namespace Bitnet.Client
 		    //JToken balance = account.Value;
 		    account_name = account.Key;
 		    if(account_name != "") {
-		    	account_key  = GetAccountAddress(account_name);
-		   		dict.Add(account_name, account_key);
+		    	//перебор адресов по аккаунту
+		    	IEnumerable<string> res_string = GetAddressesByAccount(account_name);
+		    	string[] accounts_arr = PerformQuery(res_string);
+		    	for(int i=0; i < accounts_arr.Length; i++) {
+		    		account_key = accounts_arr[i];
+		    		int account_number = i+1;
+		    		if(accounts_arr.Length == 1) {
+		    			write_name = account_name;
+		    		} else {
+		    			write_name = account_name + " (" + account_number.ToString() + ")";
+		    		}
+		    		dict.Add(write_name, account_key);
+		    	}
+		    	//account_key  = GetAccountAddress(account_name);
+		   		//dict.Add(account_name, account_key);
 		    }
 		}
     	return dict;
@@ -234,29 +254,29 @@ namespace Bitnet.Client
     }
 
     public bool Move(
-      string a_fromAccount, 
-      string a_toAccount, 
-      float a_amount, 
-      int a_minconf = 1, 
+      string a_fromAccount,
+      string a_toAccount,
+      float a_amount,
+      int a_minconf = 1,
       string a_comment = ""
     )
     {
       return (bool)InvokeMethod(
-        "move", 
-        a_fromAccount, 
-        a_toAccount, 
-        a_amount, 
-        a_minconf, 
+        "move",
+        a_fromAccount,
+        a_toAccount,
+        a_amount,
+        a_minconf,
         a_comment
       )["result"];
     }
 
     public string SendFrom(
-      string a_fromAccount, 
-      string a_toAddress, 
-      float a_amount, 
-      int a_minconf = 1, 
-      string a_comment = "", 
+      string a_fromAccount,
+      string a_toAddress,
+      float a_amount,
+      int a_minconf = 1,
+      string a_comment = "",
       string a_commentTo = ""
     )
     {
