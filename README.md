@@ -10,10 +10,8 @@
 
 Или вы можете включить исходники библиотеки, например, из [Bitnet](https://sourceforge.net/projects/bitnet) (папка Newtonsoft.Json). Тогда необходимо будет удалить папку Newtonsoft.Json/Properties.
 
-### Разработчику на бутерброды:
+---
 
-![enter image description here](http://sagleft.ru/donate_mfc.gif)
+![image](https://github.com/Sagleft/Sagleft/raw/master/image.png)
 
-Mv7vb6eWskJd2xtfB1U97CfKEZxML65Me4
-
-(MFCoin)
+### :globe_with_meridians: [Telegram канал](https://t.me/+VIvd8j6xvm9iMzhi)
